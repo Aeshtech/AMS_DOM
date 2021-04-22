@@ -128,16 +128,18 @@ body {
     left:65%;
     color: var(--primary);
 }
-.box input[type="submit"]{
+.box input[type="button"]{
     background: transparent;
     border: none;
     border-radius:5px;  
     background-color:var(--primary); 
-    padding:10px 50px; 
+    padding:10px 35px; 
     color:white;
     cursor: pointer;
     font-weight:bold;
-    margin:0 50%; 
+    text-decoration:none;
+    display:block;
+    margin:auto; 
 }  
 /*--------footer-------- */
 .footer{
@@ -258,8 +260,6 @@ div.row .grid-item1 input[type="button"]:hover{
 }
 div.row .grid-item1 span{
   position: absolute;
-  right:350px;
-  top: 17px;
 }
 
 div.row .grid-item3{
