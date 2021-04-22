@@ -1,0 +1,351 @@
+body {
+    margin: 0 auto;
+    padding:0;
+    font:normal 75% Arial, Helvetica, sans-serif;
+    background-size: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary:rgb(0, 102, 255);
+    --secondary:rgb(0, 255, 0);
+    --alert:red;
+    --lightgray:rgba(218, 214, 214, 0.897);
+}
+
+/*-------row----- */
+.row::after{
+    content: "";
+    clear: both;
+    display:table;
+}
+/* ---for mobiles--- */
+[class*="col-"]{
+    width: 100%;
+}
+/* ----for tablets---- */
+@media only screen and (max-width:600px)
+{
+    .col-t-1{width:25%;}
+    .col-t-2{width: 33.33%;}
+    .col-t-3{width: 40%}
+    .col-t-4{width: 50%}
+    .col-t-5{width: 60%;}
+    .col-t-6{width: 74%;} 
+    .col-t-7{width: 75%;}
+    .col-t-8{width: 100%;}
+}
+/* -------for desktops------- */
+@media only screen and (min-width:612px)
+{
+    .col-1{width:25%;}
+    .col-2{width: 33.33%;}
+    .col-3{width: 40%}
+    .col-4{width: 50%}
+    .col-5{width: 60%;}
+    .col-6{width: 74%;}
+    .col-7{width: 75%;}
+    .col-8{width: 100%;}
+}
+
+/* -----Login-Form Navbar----- */
+.log-navbar{
+    background:var(--primary);
+    height:50px;
+    color:rgb(223, 240, 220);
+}
+#nav1{
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+}
+/* ---Login Form--- */
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:350px;
+    padding: 0px 0px 40px 0px;
+    background:rgb(241, 238, 238);
+    box-sizing: border-box;  
+    border:2px solid var(--primary);  
+    border-radius:20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    margin: auto;
+}  
+.box h2{
+    width: 100%;
+    height: 2em;  
+    background-color:var(--primary);  
+    color:white;
+    border-radius:17px 17px 0px 0px;  
+    margin:0px 0px 20px 0px;  
+    padding:7px;
+    font-size:2em;
+    font-weight:bolder;  
+    text-align:center; 
+}
+.box .inputbox {
+    position: relative;
+}
+.box .inputbox input{
+    width:70%;
+    padding:3px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color:rgb(0, 0, 0);
+    letter-spacing: 1px;
+    background: transparent;
+    margin:50px auto;
+    border:none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    display: block;
+    border-bottom: 1px solid blue;
+    left:50%
+
+}
+.box .inputbox label{
+    position: absolute;
+    top:-10px;
+    left:60px;
+    padding:10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color:black;
+    pointer-events: none;
+    transition: .5s;
+}
+.box .inputbox input:hover ~ label,
+.box .inputbox input:valid ~ label{
+    position:absolute;
+    top:-30px;
+    left:65%;
+    color: var(--primary);
+}
+.box input[type="submit"]{
+    background: transparent;
+    border: none;
+    border-radius:5px;  
+    background-color:var(--primary); 
+    padding:10px 50px; 
+    color:white;
+    cursor: pointer;
+    font-weight:bold;
+    margin:0 50%; 
+}  
+/*--------footer-------- */
+.footer{
+    position: absolute;
+    bottom: 0;
+    background: rgb(221, 216, 216);
+    height:50px;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color:var(--primary);
+    line-height: 10px;  
+}
+
+/* --------------module-1------------- */
+.logodiv{
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  padding: 2px;
+  background:rgb(236, 236, 236);
+  height: 4em;
+  top: 0;
+}
+.logodiv a #logo{
+  display: none;
+  max-width:4em;
+  max-height:4em;
+  margin:0 50%;
+}
+.logodiv h1{
+  text-align: center;
+  font-size: 3em;
+  text-shadow: 2px 2px 4px black;
+  color: var(--primary);
+  margin-top:0.5px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color:var(--primary);
+  border: 2px ridge black;
+  position: fixed;
+  top:4em;
+  width: 100%;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color:rgb(255, 251, 251);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+}
+.topnav a#myprofile{
+  float: right;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+  /* ----------- ----For Dynamic Tables-------------- */
+div.row{
+  box-sizing: border-box;
+  padding: 5px;
+  margin-top:100px;
+}
+div.admin-dashboard{
+  display:grid;
+  grid-template-columns: 75% auto;
+  width: 100%;
+  background-color: aqua;
+}
+div.row .grid-item1{
+  background:rgb(233, 236, 236);
+  height: 80px;
+  border:1px solid blue;
+  box-shadow: 1px 1px 10px 0px rgb(97, 89, 89);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+div.row .grid-item1 input[type="search"]{
+  width: 90%;
+  height: 45%;
+  border: none;
+  outline:none;
+  border-bottom: 2px solid blue;
+  background:transparent;
+  padding-left: 40px;
+  font-size: 20px;
+}
+div.row .grid-item1 input[type="search"]:hover{
+  background-color: yellow;
+}
+
+div.row .grid-item1 input[type="button"]{
+  width: 90%;
+  height: 45%;
+  border: 3px solid red;
+  border-radius: 20px;
+  outline: none;
+  background: rgba(153, 137, 137, 0.219);
+  padding-left: 40px;
+}
+div.row .grid-item1 input[type="button"]:hover{
+  background-color: var(--alert);
+  color:white;
+  font-size: 20px;
+  outline: none;
+}
+div.row .grid-item1 span{
+  position: absolute;
+  right:350px;
+  top: 17px;
+}
+
+div.row .grid-item3{
+   background: var(--primary);
+   height: 540px;
+   border:2px ridge blue;
+   box-shadow: 2px 2px 10px 5px rgb(97, 89, 89);
+   /* position: absolute;
+   top:15%; */
+   overflow: auto;
+  }
+div.row .grid-item2 {
+  grid-row: 1/3;
+  background: var(--lightgray);
+  height: 630px;
+  border-top:2px solid blue;
+  border-left:2px solid blue;
+  box-shadow: 3px 3px 10px 0px black;
+  overflow: auto;
+  margin-right: 10px;
+  /* white-space: nowrap; */
+}
+div.row .grid-item2 h1{
+  text-align: center;
+  font-weight: bold;
+  font-size:x-large;
+  color: rgb(0, 26, 255);
+  text-shadow: 2px 2px 8px rgb(224, 218, 218);
+  margin:10px;
+}
+div.row .grid-item3 h1{
+  text-align: center;
+  font-weight: bold;
+  color:white;
+  text-shadow: 2px 2px 6px black;
+  margin: 10px;
+}
+
+table{ border-collapse: collapse;}
+table.List{ width:100%;}
+
+th { border: 2px solid #161616; padding: 8px; color:black;font-size: 18px;font-weight: bold; text-align: left;}
+td { border: 1px solid #aca7a7; color:black; font-size:15px; font-weight: bold; text-align: left; padding: 8px;}
+tr:nth-child(even),table.List thead>tr { background-color: #ffffff;text-shadow: 1px 1px 7px rgb(182, 174, 174);}
+
+div.row .grid-item3 input, #gender,#studentCourse,#studentSem,#dob,#studentDOB,#studentGender{
+  width: 70%; padding: 12px 20px; margin: 8px auto; display: block; 
+  border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;}
+
+input[type=submit]{ width: 30%; background-color: #ddd; color: #000; padding: 14px 20px;
+    margin: 8px 20px; border: none; border-radius: 4px; cursor: pointer;}
+    
+div.row .form label{
+  font-size: 17px;
+  font-style: oblique;
+}
+/* Hover effect for form Inputs */
+div.row .form input:hover,form #gender:hover,#studentCourse:hover,#studentSem:hover,#dob:hover,#studentDOB:hover,#studentGender:hover{
+  background-color: greenyellow;
+}
+/* Focus effect for form Inputs */
+div.row .form input:focus ,form #gender:focus,#studentCourse:focus,#studentSem:focus,#dob:focus,#studentDOB:focus,#studentGender:focus{
+  background-color: yellow;
+}
+.course-container{
+    background: var(--primary);
+    width: 60%;
+    height: 100%;
+    border-radius: 20px;
+    border: 2px ridge blue;
+    box-shadow: 2px 2px 10px 5px rgb(97 89 89);
+    margin: auto;
+    text-align: center;
+}
+
+
+/* ---------Anchor's in the Table Action field------- */
+table.List a#edit{ cursor: pointer;text-decoration: none;border: 2px ridge var(--primary); border-radius: 5px; padding: 5px; color:var(--primary); margin-right: 4px;box-shadow: 1px 1px 5px black;}
+
+table.List a#edit:hover{ cursor: pointer;text-decoration: none;background-color: var(--primary); border-radius: 5px; padding: 5px; color:white; margin-right: 4px;}
+
+table.List a#delete{ cursor: pointer;text-decoration: none;border: 2px ridge var(--alert); border-radius: 5px; padding: 5px; color:var(--alert); margin-right: 4px;box-shadow: 1px 1px 5px black;}
+table.List a#delete:hover{ cursor: pointer;text-decoration: none;background-color: var(--alert); border-radius: 5px; padding: 5px; color:white; margin-right: 4px;}
+
+/* ------for validation error mssg--------- */
+label.validation-error{ color: red;background-color: white; margin-left: 5px;}
+.hide{ display:none;}
+
+/* ----------------------------------------------------------------------------------- */

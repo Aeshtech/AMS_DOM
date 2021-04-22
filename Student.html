@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="styles/V2.css">
+</head>
+<body>
+  <header>
+    <div class="logodiv">
+      <!-- <a><img src="vgi-logo.jpg" id="logo"></a> -->
+      <h1>Digi VGI</h1>
+      <a href="#headprofile" class="head-profile">My Profile</a>
+    </div>
+
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <a href="Faculty.html" >Faculty</a>
+      <a href="Student.html">Student</a>
+      <a href="Course.html">Course</a>
+      <a href="subject.html">Subject</a>
+      <a href="AssignFaculty.html">Assign Faculty</a>
+      <a href="myProfile.html" id="myprofile">My Profile</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  </header>
+
+<!------ -----------Dynamic table---------------->
+<div class="row admin-dashboard">
+
+  <div class="grid-item1">
+    <span>&#128269;</span>
+    <input type="search" onkeyup="filterTable2(event)" placeholder="----Search-----">
+    <input type="button" id="deletebtn" value="Delete All Record" onclick="deleterecord2()">
+  </div>
+  <!-- Note: This page looks exactly same as faculty page so it will use same stylesheet to load fast -->
+
+  <!-----List of Students----->
+  <div class="grid-item2">
+    <h1>Student List</h1>
+    <table class="List" id="studentList">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Regitration NO</th>
+            <th>Contact No</th>
+            <th>Course</th>
+            <th>Semester</th>
+            <th>Email-ID</th>
+            <th>DOB</th>
+            <th>Father Mo.</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>
+      </thead>
+        <tbody> </tbody>
+    </table>
+  </div>
+  <div class="grid-item3">
+    <h1>Add Student</h1>
+    <!---- Input form--- -->
+    <form onsubmit="event.preventDefault(), onFormSubmit2();" autocomplete="off">
+      <div> 
+        <label>Full Name*:</label>
+        <label class="validation-error hide" id="studentNameValidationError">This field is required.</label>
+        <input type="text" name="studentFullName" id="studentFullName" placeholder="-----Full Name-----">
+      </div>
+      <div>
+        <label>Regitration No:</label>
+        <input type="text" name="studentRegistrationNo" id="registrationNo" placeholder="-----Registration No-------">
+      </div>
+      <div>
+        <label>Contact No:</label>
+        <input type="text" name="studentContactNo" id="studentContactNo" placeholder="-----Contact No----">
+      </div>
+      <div>
+        <label for="studentCourse">Course:</label>
+        <select name="studentCourse" id="studentCourse">
+          <option value="Not-selected" selected disabled>select</option>
+          <option value="B.Tech">B.Tech</option>
+          <option value="B.Pharma">B.Pharma</option>
+          <option value="">Polytechnic</option>
+          <option value="BBA">BBA</option>
+          <option value="B.Sc">B.Sc</option>
+          <option value="M.Tech">M.Tech</option>
+          <option value="M.Pharma">M.Pharma</option>
+          <option value="MBA">MBA</option>
+          <option value="M.Sc">M.Sc</option>
+          <option value="not-defined">Not Defined</option>
+      </select>
+    </div>
+    <div>
+      <label for="studentSem">Semester:</label>
+      <select name="studentSem" id="studentSem">
+      <option value="Not-Selected" selected disabled>Select</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+    </select>
+    </div>
+    <div>
+      <label>Email-ID:</label>
+      <input type="text" name="studentEmailId" id="studentEmail" placeholder="-----Email-Id----">
+    </div>
+    <div>
+        <label>Date of Birth:</label>
+        <input type="date" name="studentDOB" id="studentDOB" placeholder="-----Date of Birth----">
+    </div>
+    <div>
+      <label>Father Contact No:</label>
+      <input type="text" name="fatherContactNo" id="fatherContactNo" placeholder="--Father Contact No--">
+    </div>
+      <div>
+        <label>Address:</label>
+        <input type="text" name="studentAddress" id="studentAddress" placeholder="-----Address----">
+      </div>
+      <div>
+        <label>Gender:</label>
+        <select id="studentGender" placeholder="-----studentGender----">
+          <option name="Not-Selected" selected disabled>Select:</option>
+          <option name="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Un-Defined">Un-Defined</option>
+        </select>
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" name="studentPassword" id="studentPassword" placeholder="-----Password----">
+      </div>
+      <div class="form-action-buttons">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Scripting for top nav hamburger menu -->
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<script src="app.js"></script>
+<script src="https://ajax.googlepis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
+

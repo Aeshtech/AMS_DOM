@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/V2.css">
+</head>
+<body>
+    <header>
+        <div class="logodiv">
+          <!-- <a><img src="vgi-logo.jpg" id="logo"></a> -->
+          <h1>Digi VGI</h1>
+          <a href="#headprofile" class="head-profile">My Profile</a>
+        </div>
+    
+        <div class="topnav" id="myTopnav">
+          <a href="home.html" class="active">Home</a>
+          <a href="Faculty.html" >Faculty</a>
+          <a href="Student.html">Student</a>
+          <a href="Course.html">Course</a>
+          <a href="subject.html">Subject</a>
+          <a href="AssignFaculty.html">Assign Faculty</a>
+          <a href="myProfile.html" id="myprofile">My Profile</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      </header>
+
+<!------ -----------Dynamic table---------------->
+<div class="row admin-dashboard">
+    <div class="grid-item1">
+      <span>&#128269;</span>
+      <input type="search" onkeyup="filterTable4(event)" placeholder="---------------Search-----------------">
+      <input type="button" id="deletebtn" value="Delete All Record" onclick="deleteRecord4()">
+    </div>
+  
+    <!-----List of Faculty ----->
+    <div class="grid-item2">
+      <h1>Assigned Faculty List</h1>
+      <table class="List" id="assignFacultyList">
+          <thead>
+            <tr>
+                <th>Course name</th>
+                <th>Semester</th>
+                <th>Faculty Name</th>
+                <th>Subject Name</th>
+                <th>Subject Code</th>
+                <th>Total class</th>
+                <th>Action</th>
+          </tr>
+        </thead>
+          <tbody> </tbody>
+      </table>
+    </div>
+
+    <div class="grid-item3">
+        <h1>Assign Faculty</h1>
+        <!---- Input form--- -->
+        <form onsubmit="event.preventDefault(),onFormSubmit4();" autocomplete="off">
+          <div>
+            <label>Course Name:</label>
+            <input type="text" name="Assign Course" id="assignCourse" placeholder="-----Assign Course-------">
+          </div>
+          <div>
+            <label>Semester:</label>
+            <input type="number" name="Assign Semester" id="assignSemester" placeholder="-----Semester----">
+          </div>
+          <div> 
+              <label>Faculty Name*:</label>
+              <label class="validation-error hide" id="assignFacultyValidationError">This field is required.</label>
+              <input type="text" name="Assign Faculty" id="assignFaculty" placeholder="-----Full Name-----">
+          </div>
+          <div>
+            <label>Subject Name:</label>
+            <input type="text" name="assignsubjectName" id="assignSubjectName" placeholder="-----Assign Subject Name----">
+          </div>
+          <div>
+            <label>Subject Code:</label>
+            <input type="text" name="assignSubjectCode" id="assignSubjectCode" placeholder="-----Assign Subject Code----">
+          </div>
+          <div>
+            <label>Total Class:</label>
+            <input type="number" name="Assign Classes" id="assignClasses" placeholder="-----Assign Classes----">
+          </div>
+          <div class="form-action-buttons">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+    </div>
+
+<!-- Scripting for top nav hamburger menu -->
+<script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+    <script src="app.js"></script>
+    <script src="https://ajax.googlepis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="styles/V2.css">
+</head>
+<body>
+  <header>
+    <div class="logodiv">
+      <!-- <a><img src="vgi-logo.jpg" id="logo"></a> -->
+      <h1>Digi VGI</h1>
+      <!-- <a href="#headprofile" class="head-profile">My Profile</a> -->
+    </div>
+
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <a href="Faculty.html" >Faculty</a>
+      <a href="Student.html">Student</a>
+      <a href="Course.html">Course</a>
+      <a href="Subject.html">Subject</a>
+      <a href="AssignFaculty.html">Assign Faculty</a>
+      <a href="myProfile.html" id="myprofile">My Profile</a>
+      <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()"></a>
+        <i class="fa fa-bars"></i>
+    </a> -->
+  </div>
+  </header>
+
+  <!------ -----------Dynamic table---------------->
+<div class="row admin-dashboard">
+  <div class="grid-item1 ">
+    <span>&#128269;</span>
+    <input type="search" onkeyup="filterTable(event)" placeholder="---------------Search--------------">
+    <input type="button" id="deletebtn" value="Delete All Record" onclick="deleterecord()">
+  </div>
+
+  <!-----List of Faculty ----->
+  <div class="grid-item2">
+    <h1>Faculty List</h1>
+    <table class="List" id="facultyList">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Login-ID</th>
+            <th>Password</th>
+            <th>Gender</th>
+            <th>DOB</th>
+            <th>Contact No.</th>
+            <th>Action</th>
+        </tr>
+      </thead>
+        <tbody> </tbody>
+    </table>
+  </div>
+
+  <div class="grid-item3">
+    <h1>Add Faculty</h1>
+    <!---- Input form--->
+    <form onsubmit="event.preventDefault(),onFormSubmit();" autocomplete="off">
+      <div> 
+        <label>Full Name*:</label>
+        <label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+        <input type="text" name="fullName" id="fullName" placeholder="-----Full Name-----">
+      </div>
+      <div>
+        <label>Email-ID:</label>
+        <input type="email" name="email" id="email" placeholder="-----Email-id-------">
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" name="password" id="password" placeholder="-----Password----">
+      </div>
+      <div>
+        <!-- we should not use id attr in label same as select,bcoz script will target label and give undefined -->
+        <label>Gender:</label>
+        <select name="gender" id="gender">
+          <option value="select-Gender" selected disabled>select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="not-defined">Not Defined</option>
+      </select>
+    </div>
+      <div>
+        <label>Date of Birth:</label>
+        <input type="date" name="dob" id="dob" placeholder="-----Date of Birth----">
+      </div>
+      <div>
+        <label>Contact No:</label>
+        <input type="text" name="ContactNo" id="contactNo" placeholder="-----Contact No----">
+      </div>
+      <div>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Scripting -->
+<!-- <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} -->
+</script>
+<script src="app.js"></script>
+<script src="https://ajax.googlepis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
