@@ -11,7 +11,7 @@ body {
 }
 
 :root{
-    --primary:rgb(0, 102, 255);
+    --primary:blue;
     --secondary:rgb(0, 255, 0);
     --alert:red;
     --lightgray:rgba(218, 214, 214, 0.897);
